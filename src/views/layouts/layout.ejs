@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Library Mangement</title>
+
     <!--Custom CSS-->
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="/css/style.css">
     <!--GoogleFonts-->
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Oswald" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -18,12 +18,28 @@
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js "></script>
     <!-- Latest compiled JavaScript -->
     <script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js "></script>
+    <link href="https://unpkg.com/filepond/dist/filepond.css" rel="stylesheet">
+    <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css" rel="stylesheet">
+    <script defer src="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.js"></script>
+    <script defer src="https://unpkg.com/filepond-plugin-file-encode/dist/filepond-plugin-file-encode.js"></script>
+    <script defer src="https://unpkg.com/filepond-plugin-image-resize/dist/filepond-plugin-image-resize.js"></script>
+    <script defer src="https://unpkg.com/filepond/dist/filepond.js"></script>
+    <script defer src="/js/fileUpload.js"></script>
+    <link id="main-css" rel="stylesheet" href="/css/main.css">
+    <title>Library Mangement</title>
 </head>
 
 <body>
-    1
-    <%- body %>
-        3
+    <%- include('../partials/header.ejs') %>
+        <section class="container-fluid">
+            <%- include('../partials/errorMessage.ejs') %>
+                <div class="mycards  ">
+                    <div class="card p-3 text-secondary">
+                        <%- body %>
+                    </div>
+                </div>
+        </section>
+        <%- include('../partials/footer.ejs') %>
 </body>
 
 </html>

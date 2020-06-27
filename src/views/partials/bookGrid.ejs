@@ -1,0 +1,28 @@
+<% bookCoverClass = locals.large ? 'book-cover-large' : '' %>
+    <% bookGridClass = locals.large ? 'book-grid-large' : '' %>
+        <div class="book-grid <%= bookGridClass %>">
+            <% books.forEach(book => { %>
+                <div class="row m-3">
+                    <div class="col-4 ">
+                        <a href="/books/<%= book.id %>">
+                         <img class="book-cover rounded-circle profile <%= bookCoverClass %>" src="<%= book.coverImagePath %>">
+                        </a>
+                    </div>
+                    <div class="col-8 p-5">
+                        <div class="col-9 p-5">
+                            <h4 class="card-title "> BOOK TITLE :
+                                <%= book.title %>
+                            </h4>
+                            <a href="/authors/<%= book.author.id %> " class="badge badge-secondary">
+                                <%= book.author.name %>
+                            </a>
+                            <br>
+                            <a href="#" class="card-link text-muted">
+                                <%= book.publishDate.toDateString() %>
+                            </a>
+                            <a href="/books/<%= book.id %>" class="card-link text-muted ">Read more</a>
+                        </div>
+                    </div>
+                    <hr>
+                    <% }) %>
+                </div>
